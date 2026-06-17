@@ -97,8 +97,9 @@
     <div class="hearts" id="hearts"></div>
     <div class="hint" id="hint">💌 برای باز کردن نامه کلیک کن</div>
 
+    <!-- 🎵 آهنگ انتخابی تو -->
     <audio id="bgMusic" preload="auto" loop>
-        <source src="ahang.mp3" type="audio/mpeg">
+        <source src="https://cdn.beathub.ir/2024/album/soundtrack/movie/foreign/single/The.Irishman.2019/01.%20The%20Five%20Satins%20-%20In%20The%20Still%20Of%20The%20Night%20%28Www.BeatHub.Ir%29.mp3" type="audio/mpeg">
     </audio>
 
     <div class="envelope" id="envelope">
@@ -128,6 +129,9 @@
         const hint = document.getElementById('hint');
         const closeBtn = document.getElementById('closeBtn');
         const bgMusic = document.getElementById('bgMusic');
+
+        // تنظیم صدا (کمی ملایم‌تر)
+        bgMusic.volume = 0.7;
 
         envelope.addEventListener('click', function(e) {
             if (e.target === closeBtn) return;
