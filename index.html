@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دل نوشته ای برای آنجلو ❤️</title>
+    <title>نامه عاشقانه برای تو ❤️</title>
     
     <!-- فونت وزیرمتن -->
     <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.2/Vazirmatn-font-face.css" rel="stylesheet">
@@ -95,10 +95,10 @@
         }
         
         .envelope {
-            width: 360px;
+            width: 380px;
             max-width: 92vw;
-            height: 240px;
-            min-height: 200px;
+            height: 260px;
+            min-height: 220px;
             position: relative;
             cursor: pointer;
             transition: transform 0.3s, filter 0.3s;
@@ -129,26 +129,54 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
         
+        /* 📄 نامه با ظاهر کاغذ واقعی */
         .letter {
             position: absolute;
-            width: 88%;
-            max-height: 78%;
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+            width: 90%;
+            height: 88%;
+            max-height: 88%;
+            background: #fdfaf3;
+            background-image: 
+                repeating-linear-gradient(
+                    to bottom,
+                    transparent,
+                    transparent 29px,
+                    #d4e5d0 29px,
+                    #d4e5d0 30px
+                );
             color: #333;
-            left: 6%;
-            top: 8%;
-            padding: 25px 22px 22px 22px;
-            border-radius: 12px;
+            left: 5%;
+            top: 6%;
+            padding: 30px 25px 25px 25px;
+            border-radius: 5px;
             overflow-y: auto;
             overflow-x: hidden;
             transform: translateY(40px);
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 
+                0 15px 40px rgba(0,0,0,0.35),
+                inset 0 0 30px rgba(0,0,0,0.03);
             z-index: 1;
             scrollbar-width: thin;
             scrollbar-color: #198754 #f0f0f0;
+            border: 1px solid #e8e0d0;
+            position: relative;
         }
+        
+        /* خط قرمز عمودی مثل کاغذهای قدیمی */
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 40px;
+            width: 2px;
+            height: 100%;
+            background: rgba(255, 100, 100, 0.3);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
         .letter::-webkit-scrollbar { width: 5px; }
         .letter::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 10px; }
         .letter::-webkit-scrollbar-thumb { background: #198754; border-radius: 10px; }
@@ -160,7 +188,7 @@
             box-shadow: 0 -5px 20px rgba(0,0,0,0.3); 
         }
         .open .letter { 
-            transform: translateY(-120px); 
+            transform: translateY(-140px); 
             opacity: 1; 
             z-index: 4;
         }
@@ -173,19 +201,28 @@
         .envelope.open { animation: openEffect 0.5s ease; }
         
         h1 { 
-            text-align: center; color: #198754; margin-bottom: 18px; 
-            font-size: 20px; font-weight: 900; 
-            letter-spacing: -0.5px; line-height: 1.8; 
+            text-align: center; color: #198754; margin-bottom: 20px; 
+            font-size: 22px; font-weight: 900; 
+            letter-spacing: -0.5px; line-height: 1.8;
+            position: relative; z-index: 1;
         }
-        .message { line-height: 2.3; font-size: 14px; color: #444; }
-        .message p { margin-bottom: 10px; }
+        .message { 
+            line-height: 2.5; 
+            font-size: 16px; 
+            color: #3a3a3a;
+            position: relative; 
+            z-index: 1;
+        }
+        .message p { margin-bottom: 12px; }
         .signature { 
-            margin-top: 22px; text-align: center; font-weight: 900; 
-            color: #198754; font-size: 16px; 
+            margin-top: 25px; text-align: center; font-weight: 900; 
+            color: #198754; font-size: 17px;
+            position: relative; z-index: 1;
         }
         .small { 
-            margin-top: 10px; font-style: italic; text-align: center; 
-            color: #666; font-size: 13px; 
+            margin-top: 12px; font-style: italic; text-align: center; 
+            color: #777; font-size: 14px;
+            position: relative; z-index: 1;
         }
         
         .close-btn {
@@ -215,26 +252,39 @@
         @media (max-width: 480px) {
             .envelope {
                 width: 94vw;
-                height: 50vh;
-                min-height: 250px;
-                max-height: 350px;
+                height: 55vh;
+                min-height: 280px;
+                max-height: 400px;
             }
             .letter {
-                padding: 20px 18px;
-                width: 90%;
-                left: 5%;
-                max-height: 82%;
+                padding: 25px 18px 20px 18px;
+                width: 92%;
+                left: 4%;
+                height: 90%;
+                max-height: 90%;
             }
-            .open .letter { transform: translateY(-130px); }
+            .open .letter { transform: translateY(-150px); }
             .hint { bottom: 20px; font-size: 14px; padding: 10px 24px; }
-            h1 { font-size: 18px; }
-            .message { font-size: 13px; line-height: 2.2; }
+            h1 { font-size: 19px; }
+            .message { font-size: 15px; line-height: 2.4; }
         }
         
         @media (prefers-color-scheme: dark) {
-            .letter { background: #1e1e1e; color: #e0e0e0; }
+            .letter { 
+                background: #2a2520;
+                background-image: 
+                    repeating-linear-gradient(
+                        to bottom,
+                        transparent,
+                        transparent 29px,
+                        #3a3530 29px,
+                        #3a3530 30px
+                    );
+                color: #e0e0e0; 
+                border-color: #3a3530;
+            }
             .message { color: #ccc; }
-            .small { color: #999; }
+            .small { color: #aaa; }
             .envelope-body { background: linear-gradient(180deg, #2d2d2d 0%, #252525 100%); }
         }
     </style>
@@ -242,7 +292,7 @@
 <body>
     <div class="particles" id="particles"></div>
     <div class="hearts" id="hearts"></div>
-    <div class="hint" id="hint">💌 لطفآ کلیک کن قشنگم</div>
+    <div class="hint" id="hint">💌 برای باز کردن نامه کلیک کن</div>
 
     <audio id="bgMusic" preload="auto" loop>
         <source src="https://cdn.beathub.ir/2024/album/soundtrack/movie/foreign/single/The.Irishman.2019/01.%20The%20Five%20Satins%20-%20In%20The%20Still%20Of%20The%20Night%20%28Www.BeatHub.Ir%29.mp3" type="audio/mpeg">
